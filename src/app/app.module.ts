@@ -1,25 +1,30 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {ConfigService} from './config/config-service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CardsModule, CarouselModule, WavesModule} from 'angular-bootstrap-md';
 
 import {AppComponent} from './app.component';
-import {NavigationSectionComponent} from './navigation-section/navigation-section.component';
-import {CarouselBookSectionComponent} from './carousel-book-section/carousel-book-section.component';
+import {NavigationSectionComponent} from './navigation-component/navigation-section.component';
+import {CarouselBookSectionComponent} from './carousel-book-component/carousel-book-section.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationSectionComponent,
-    CarouselBookSectionComponent
+    CarouselBookSectionComponent,
+    FooterComponentComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    CarouselModule,
+    WavesModule,
+    CardsModule
   ],
-  providers: [
-    ConfigService
-  ],
+  providers: [],
   bootstrap: [
     AppComponent
   ]

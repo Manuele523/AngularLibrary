@@ -1,0 +1,15 @@
+
+.container-fluid-OPTIONAL {
+  padding: 15px;
+}
+
+.card {
+  width: 100%;
+  height: 600px;
+}
+
+mdb-card-img {
+  padding: 15px;
+  height: 15px;
+}
+

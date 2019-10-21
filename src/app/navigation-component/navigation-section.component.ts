@@ -10,6 +10,7 @@ export class NavigationSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("NavigationSectionComponent");
   }
 
 }

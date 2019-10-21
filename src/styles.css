@@ -1,0 +1,60 @@
+body {
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  position: relative;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-size: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: baseline;
+}
+
+/* Typography
+------------------------------------- */
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  color: #525252;
+  letter-spacing: 1px;
+}
+
+h5 {
+  color: #ffa400;
+  letter-spacing: 4px;
+  padding-top: 22px;
+}
+
+.heading {
+  color: #000000;
+  font-size: 62px;
+}
+
+p {
+  color: #727272;
+  letter-spacing: 0.9px;
+  line-height: 28px;
+}
+
+a {
+  outline: none !important;
+}
+
+hr {
+  width: 120px;
+}
+
+.color-white {
+  color: #FFF;
+}
+
+.color-white a {
+  color: #FC3;
+}

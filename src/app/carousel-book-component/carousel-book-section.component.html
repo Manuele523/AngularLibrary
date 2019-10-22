@@ -3,39 +3,42 @@
                 class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'">
     <ng-container *ngSwitchCase="'multiple'">
       <mdb-carousel-item active>
-        <div class="col-md-1"></div>
-        <div class="col-md-2" *ngFor="let card of data | slice:0:5; ">
+        <div class="col-md-3" *ngFor="let card of data | slice:0:4; ">
           <mdb-card class="my-1">
-            <mdb-card-img class="img-fluid" src="'../../assets/images/cover/{{card.id}}.jpg"></mdb-card-img>
+            <img src="'../../assets/images/cover/{{card.id}}.jpg"/>
             <mdb-card-body>
-              <mdb-card-title>
-                <h4>{{card.title}}</h4>
-              </mdb-card-title>
-              <p><b>PRICE: {{card.price}} </b></p>
-              <p>pubblication date: {{card.publicationdate}}</p>
-              <p>ISBN(Code): {{card.code}}</p>
+              <p><b>GAY: {{card.price}} $</b></p>
+              <p>GAY: {{card.publicationdate}}</p>
+              <p>GAY: {{card.code}}</p>
             </mdb-card-body>
           </mdb-card>
         </div>
-        <div class="col-md-1"></div>
       </mdb-carousel-item>
 
       <mdb-carousel-item>
-        <div class="col-md-1"></div>
-        <div class="col-md-2" *ngFor="let card of data | slice:5:10; ">
+        <div class="col-md-3" *ngFor="let card of data | slice:4:8; ">
           <mdb-card class="my-1">
-            <mdb-card-img src="'../../assets/images/cover/{{card.id}}.jpg"></mdb-card-img>
+            <img src="'../../assets/images/cover/{{card.id}}.jpg"/>
             <mdb-card-body>
-              <mdb-card-title>
-                <h4>{{card.title}}</h4>
-              </mdb-card-title>
-              <p><b>PRICE: {{card.price}} </b></p>
+              <p><b>PRICE: {{card.price}} $</b></p>
               <p>pubblication date: {{card.publicationdate}}</p>
               <p>ISBN(Code): {{card.code}}</p>
             </mdb-card-body>
           </mdb-card>
         </div>
-        <div class="col-md-1"></div>
+      </mdb-carousel-item>
+
+      <mdb-carousel-item>
+        <div class="col-md-3" *ngFor="let card of data | slice:8:12; ">
+          <mdb-card class="my-1">
+            <img src="'../../assets/images/cover/{{card.id}}.jpg"/>
+            <mdb-card-body>
+              <p><b>PRICE: {{card.price}} $</b></p>
+              <p>pubblication date: {{card.publicationdate}}</p>
+              <p>ISBN(Code): {{card.code}}</p>
+            </mdb-card-body>
+          </mdb-card>
+        </div>
       </mdb-carousel-item>
 
     </ng-container>

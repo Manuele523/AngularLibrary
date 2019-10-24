@@ -1,6 +1,6 @@
 import {Component, OnInit, HostListener} from '@angular/core';
-import {Book} from '../ObjectDb/Book';
 import {HttpClient} from '@angular/common/http';
+import {MyService} from '../service/Service.model';
 
 @Component({
   selector: 'app-carousel-book-section',
@@ -9,10 +9,9 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CarouselBookSectionComponent implements OnInit {
 
-  data: Array<Book>;
   listBooks = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private myService: MyService) {
   }
 
   CAROUSEL_BREAKPOINT = 768;
@@ -22,7 +21,8 @@ export class CarouselBookSectionComponent implements OnInit {
   ngOnInit() {
     console.log('CarouselBookSectionComponent');
 
-    this.getValueOfBook();
+    this.listBooks.concat(this.myService.getBookStar());
+    // console.log(this.listBooks);
 
     if (window.innerWidth <= this.CAROUSEL_BREAKPOINT) {
       this.carouselDisplayMode = 'single';
@@ -30,20 +30,6 @@ export class CarouselBookSectionComponent implements OnInit {
       this.carouselDisplayMode = 'multiple';
     }
   }
-
-  private getValueOfBook() {
-
-    this.http.get<Array<Book>>('http://localhost:8080/getAdvisedBooks').subscribe(data => {
-      this.data = data;
-
-      for (let i = 0; i < 10; i += 2) {
-        this.listBooks.push(this.data[i]);
-      }
-
-      console.log('listBooks contiene: ' + this.listBooks);
-    });
-  }
-
 
   @HostListener('window:resize')
   onWindowResize() {

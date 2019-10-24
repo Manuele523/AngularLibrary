@@ -1,7 +1,7 @@
 export interface Book {
-  id: bigint;
+  id: number;
   title: string;
   code: string;
-  publicationdate: Date;
+  publication: Date;
   price: number;
 }

@@ -7,14 +7,17 @@ import {CardsModule, CarouselModule, WavesModule} from 'angular-bootstrap-md';
 import {AppComponent} from './app.component';
 import {NavigationSectionComponent} from './navigation-component/navigation-section.component';
 import {CarouselBookSectionComponent} from './carousel-book-component/carousel-book-section.component';
-import { FooterComponentComponent } from './footer-component/footer-component.component';
+import {FooterComponentComponent} from './footer-component/footer-component.component';
+import {ListBookComponentComponent} from './list-book-component/list-book-component.component';
+import {AppRoutingModule} from './app-routing-module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationSectionComponent,
     CarouselBookSectionComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    ListBookComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
     NgbModule,
     CarouselModule,
     WavesModule,
-    CardsModule
+    CardsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [

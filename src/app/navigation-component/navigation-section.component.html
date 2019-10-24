@@ -16,7 +16,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Books</a>
+            <a class="nav-link" (click)="onClick()" routerLink="/book" routerLinkActive="active">Books</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact Us
@@ -47,3 +47,6 @@
   </div>
 </header>
 
+<app-carousel-book-section *ngIf="isDisabled"  ></app-carousel-book-section>
+
+<router-outlet></router-outlet>

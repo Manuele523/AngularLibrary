@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navigation-section',
@@ -7,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationSectionComponent implements OnInit {
 
-  constructor() { }
+  isDisabled: boolean;
 
-  ngOnInit() {
-    console.log("NavigationSectionComponent");
+  constructor() {
+    this.isDisabled = true;
   }
 
+  ngOnInit() {
+    console.log('NavigationSectionComponent');
+  }
+
+  onClick() {
+    this.isDisabled = false;
+  }
 }

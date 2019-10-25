@@ -1,6 +1,8 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {MyService} from '../service/Service.model';
+import {MyService} from '../../service/Service.model';
+import {Observable} from 'rxjs';
+import {Book} from '../../ObjectDb/Book';
 
 @Component({
   selector: 'app-carousel-book-section',
@@ -9,7 +11,7 @@ import {MyService} from '../service/Service.model';
 })
 export class CarouselBookSectionComponent implements OnInit {
 
-  listBooks = [];
+  listBooks: any;
 
   constructor(private http: HttpClient, private myService: MyService) {
   }
@@ -21,8 +23,9 @@ export class CarouselBookSectionComponent implements OnInit {
   ngOnInit() {
     console.log('CarouselBookSectionComponent');
 
-    this.listBooks.concat(this.myService.getBookStar());
-    // console.log(this.listBooks);
+    this.myService.getBookStar().subscribe((data) => {
+      this.listBooks = data;
+    });
 
     if (window.innerWidth <= this.CAROUSEL_BREAKPOINT) {
       this.carouselDisplayMode = 'single';

@@ -25,11 +25,11 @@
     </div>
     <div class="col-md-9 container-all-book">
       <div class="row">
-        <div class="col-md-4 container-Book" *ngFor="let card of listTypesBooks[1]">
+        <div class="col-md-4 container-Book" *ngFor="let card of listTypesBooks[1] | slice: 0 : 6">
           <mdb-card class="my-1">
             <img class="img-book" src="../../assets/images/cover/{{card.id}}.jpg"/>
             <mdb-card-body>
-              <p><b>PRICE: {{card.price}} $</b></p>
+              <p><b>PRICE: {{card.price}}$</b></p>
               <p>pubblication date: {{card.publication}}</p>
               <p>ISBN(Code): {{card.code}}</p>
             </mdb-card-body>
